@@ -1,6 +1,31 @@
 @tailwind utilities;
 @import "tailwindcss";
 
+@theme {
+  /* colors */
+  --color-neutral-900: hsl(227, 75%, 14%);
+  --color-neutral-800: hsl(226, 25%, 17%);
+  --color-neutral-700: hsl(225, 23%, 24%);
+  --color-neutral-600: hsl(226, 11%, 37%);
+  --color-neutral-300: hsl(0, 0%, 78%);
+  --color-neutral-200: hsl(217, 61%, 90%);
+  --color-neutral-100: hsl(0, 0%, 93%);
+  --color-neutral-0: hsl(200, 60%, 99%);
+
+  --color-red-400: hsl(3, 86%, 64%);
+  --color-red-500: hsl(3, 71%, 56%);
+  --color-red-700: hsl(3, 77%, 44%);
+
+  --color-light-gradient-from: #ebf2fc;
+  --color-light-gradient-to: #eef8f9;
+
+  --color-dark-gradient-from: #040918;
+  --color-dark-gradient-to: #091540;
+
+  /* font family */
+  --font-display: "NotoSans", "sans-serif";
+}
+
 /* RESET */
 body,
 p,
