@@ -22,7 +22,7 @@
     "noFallthroughCasesInSwitch": true,
     "esModuleInterop": true
   },
-  "include": ["src"],
+  "include": ["src", "src/custom.d.ts"],
   "references": [{ "path": "./tsconfig.node.json" }],
   "exclude": ["cypress.config.ts", "cypress", "node_modules"]
 }
