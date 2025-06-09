@@ -11,11 +11,20 @@ export const useThemeStore = create<themeStore>()(
     (set, get) => ({
       theme: "light",
       switchTheme: () => {
-        if (get().theme == "light") {
+        const root = window.document.documentElement;
+
+        let oldTheme = "";
+
+        if (get().theme === "light") {
+          oldTheme = "light";
           set({ theme: "dark" });
         } else {
+          oldTheme = "dark";
           set({ theme: "light" });
         }
+
+        root.classList.remove(oldTheme);
+        root.classList.add(get().theme);
       },
     }),
     {
