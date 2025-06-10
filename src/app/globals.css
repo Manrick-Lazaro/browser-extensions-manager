@@ -29,6 +29,10 @@
   --font-display: "NotoSans", "sans-serif";
 }
 
+:root {
+  --font-NotoSans: "NotoSans";
+}
+
 /* RESET */
 body,
 p,
@@ -45,30 +49,31 @@ li {
 
 /* FONTS */
 @font-face {
-  font-family: "NotoSans";
-  src: url("/src/assets/fonts/NotoSans-Italic-VariableFont_wdth-wght.ttf")
+  font-family: NotoSans;
+  src: url("../assets/fonts/NotoSans-Italic-VariableFont_wdth-wght.ttf")
     format(".ttf");
   font-weight: 400;
   font-style: italic;
 }
 
 @font-face {
-  font-family: "NotoSans";
-  src: url("/src/assets/fonts/static/NotoSans-Regular.ttf");
+  font-family: NotoSans;
+  src: url("../assets/fonts/static/NotoSans-Regular.ttf");
   font-weight: 400;
+  font-display: swap;
   font-style: normal;
 }
 
 @font-face {
   font-family: "NotoSans";
-  src: url("/src/assets/fonts/static/NotoSans-Medium.ttf");
+  src: url("../assets/fonts/static/NotoSans-Medium.ttf");
   font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
   font-family: "NotoSans";
-  src: url("/src/assets/fonts/static/NotoSans-Bold.ttf");
+  src: url("../assets/fonts/static/NotoSans-Bold.ttf");
   font-weight: 700;
   font-style: normal;
 }

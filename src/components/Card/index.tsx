@@ -22,7 +22,7 @@ export default function Card({
         <img src={logo} alt="logo exetion" />
 
         <div>
-          <h2 className="text-neutral-900 dark:text-neutral-0 font-[500] text-xl">
+          <h2 className="text-neutral-900 dark:text-neutral-0 font-[700] text-xl">
             {name}
           </h2>
           <p className="dark:text-neutral-100">{description}</p>
