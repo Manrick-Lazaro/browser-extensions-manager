@@ -1,6 +1,6 @@
 import { JSX } from "react";
 
-import Logo from "../../assets/images/logo.svg?react";
+import Logo from "../../assets/images/logo.svg";
 import { ThemeToggleButton } from "../ThemeToggleButton";
 
 export default function Header(): JSX.Element {
