@@ -1,22 +1,29 @@
 import { JSX } from "react";
 import ToggleButton from "../ToggleButton";
 
-export default function Card(): JSX.Element {
+type CardProps = {
+  logo: string;
+  name: string;
+  description: string;
+  isActive: boolean;
+};
+
+export default function Card({
+  logo,
+  name,
+  description,
+  isActive,
+}: CardProps): JSX.Element {
   return (
-    <div className="bg-neutral-0 dark:bg-neutral-800 border-[0.5px] border-neutral-300 dark:border-neutral-600 rounded-xl shadow-md p-4 flex flex-col gap-y-6">
+    <div className="bg-neutral-0 dark:bg-neutral-800 border-[0.5px] border-neutral-300 dark:border-neutral-600 rounded-2xl shadow-md p-4 flex flex-col gap-y-6">
       <div className="flex flex-row items-start gap-4 h-25 overflow-auto">
-        <img src="./assets/images/logo-devlens.svg" alt="logo exetion" />
+        <img src={logo} alt="logo exetion" />
 
         <div>
           <h2 className="text-neutral-900 dark:text-neutral-0 font-[500] text-xl">
-            DevLens
+            {name}
           </h2>
-          <p className="dark:text-neutral-100">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem
-            ipsum, dolor sit amet consectetur adipisicing eliLorem ipsum, dolor
-            sit amet consectetur adipisicing eliLorem ipsum, dolor sit amet
-            consectetur adipisicing eli
-          </p>
+          <p className="dark:text-neutral-100">{description}</p>
         </div>
       </div>
 
