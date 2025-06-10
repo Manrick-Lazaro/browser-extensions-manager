@@ -3,7 +3,7 @@ import ToggleButton from "../ToggleButton";
 
 export default function Card(): JSX.Element {
   return (
-    <div className="bg-neutral-0 dark:bg-neutral-800 border-[0.5px] border-neutral-300 rounded-xl shadow-md p-4 flex flex-col gap-y-6">
+    <div className="bg-neutral-0 dark:bg-neutral-800 border-[0.5px] border-neutral-300 dark:border-neutral-600 rounded-xl shadow-md p-4 flex flex-col gap-y-6">
       <div className="flex flex-row items-start gap-4 h-25 overflow-auto">
         <img src="./assets/images/logo-devlens.svg" alt="logo exetion" />
 
