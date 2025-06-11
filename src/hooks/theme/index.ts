@@ -7,15 +7,10 @@ type themeStore = {
   switchTheme: () => void;
 };
 
-function X(): string {
-  const theme = JSON.parse(cookieStorage.getItem("data_theme"));
-  return theme.state.theme;
-}
-
 export const useThemeStore = create<themeStore>()(
   persist(
     (set, get) => ({
-      theme: X(),
+      theme: "light",
       switchTheme: () => {
         const root = window.document.documentElement;
 
@@ -36,7 +31,13 @@ export const useThemeStore = create<themeStore>()(
     {
       name: "data_theme",
       storage: createJSONStorage(() => cookieStorage),
-      skipHydration: true,
+      onRehydrateStorage: () => (state) => {
+        if (typeof window !== "undefined" && state?.theme) {
+          const root = window.document.documentElement;
+          root.classList.remove("light", "dark");
+          root.classList.add(state.theme);
+        }
+      },
     }
   )
 );
