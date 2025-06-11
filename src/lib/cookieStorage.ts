@@ -4,9 +4,9 @@ import Cookies from "js-cookie";
 export const cookieStorage = {
   getItem: (name: string) => {
     if (typeof window !== "undefined") {
-      return Cookies.get(name) || "light";
+      return Cookies.get(name) || null;
     }
-    return "light";
+    return null;
   },
   setItem: (name: string, value: string) => {
     Cookies.set(name, value, {
