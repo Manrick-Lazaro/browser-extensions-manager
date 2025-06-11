@@ -1,17 +1,20 @@
-import { JSX } from "react";
+"use client";
 
-import jsonData from "../data/data.json";
+import { JSX, useEffect, useState } from "react";
+
 import Header from "../components/Header";
-import Card from "../components/Card";
+import Card, { CardProps } from "../components/Card";
 
 export default function Home(): JSX.Element {
-  // const [data, setData] = useState(null);
+  const [data, setData] = useState([]);
 
-  // useEffect(() => {
-  //   fetch("../../data/data.json")
-  //     .then((res) => res.json())
-  //     .then((json) => setData(json));
-  // }, []);
+  useEffect(() => {
+    fetch("/api/json-handler")
+      .then((res) => res.json())
+      .then((json) => {
+        setData(json);
+      });
+  }, []);
 
   // function editJsonFile() {
   //   const jsonString = JSON.stringify(data);
@@ -22,13 +25,16 @@ export default function Home(): JSX.Element {
       <div className="px-5 pt-4">
         <Header />
 
-        <div className="mt-6">
-          <Card
-            name={jsonData[0].name}
-            logo={jsonData[0].logo}
-            description={jsonData[0].description}
-            isActive={jsonData[0].isActive}
-          />
+        <div className="mt-6 gap-3 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+          {data.map((item: CardProps) => (
+            <Card
+              key={item.name}
+              name={item.name}
+              logo={item.logo}
+              description={item.description}
+              isActive={item.isActive}
+            />
+          ))}
         </div>
       </div>
     </div>
