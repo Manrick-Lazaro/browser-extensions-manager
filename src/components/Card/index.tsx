@@ -5,6 +5,7 @@ import Image from "next/image";
 
 import ToggleButton from "../ToggleButton";
 import { ExtensionType } from "@/types/extension";
+import ButtonComponent from "../ButtonComponent/ButtonComponent";
 
 export default function Card({
   id,
@@ -48,9 +49,7 @@ export default function Card({
       </div>
 
       <div className="flex flex-row justify-between items-center">
-        <button className="text-neutral-900 dark:text-neutral-100 border-[0.5px] border-neutral-300 px-4 py-1 rounded-full">
-          Remove
-        </button>
+        <ButtonComponent text="Remove" w={15} h={6} desabledShadow />
 
         <ToggleButton isActive={isActive} onChange={onChange} />
       </div>
