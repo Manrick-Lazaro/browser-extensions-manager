@@ -23,7 +23,16 @@ export default async function handler(
 
   switch (req.method) {
     case "GET": {
-      res.status(200).json(data);
+      const { filter } = req.query;
+
+      let filteredData = data;
+      const filterBoolean = filter === "Active" ? true : false;
+
+      if (filter && typeof filter === "string") {
+        filteredData = data.filter((item) => item.isActive === filterBoolean);
+      }
+
+      res.status(200).json(filteredData);
       break;
     }
 
