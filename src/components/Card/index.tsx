@@ -1,14 +1,10 @@
 "use client";
 
-import { JSX } from "react";
+import { JSX, useState } from "react";
 import Image from "next/image";
 
 import ToggleButton from "../ToggleButton";
 import { ExtensionType } from "@/types/extension";
-
-export type CardProps = ExtensionType & {
-  syncData: () => void;
-};
 
 export default function Card({
   id,
@@ -16,19 +12,18 @@ export default function Card({
   name,
   description,
   isActive,
-  syncData,
-}: CardProps): JSX.Element {
+}: ExtensionType): JSX.Element {
+  const [active, setActive] = useState(isActive);
+
   function onChange() {
     const updatedExtension: ExtensionType = {
       id,
       logo,
       name,
       description,
-      isActive: !isActive,
+      isActive: !active,
     };
-
-    updateExtension(updatedExtension);
-    syncData();
+    updateExtension(updatedExtension).finally(() => setActive(!active));
   }
 
   async function updateExtension(extension: ExtensionType) {
