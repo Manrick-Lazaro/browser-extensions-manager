@@ -27,6 +27,9 @@
 
   /* font family */
   --font-display: "NotoSans", "sans-serif";
+
+  /* Breakpoints */
+  --breakpoint-xs: 570px;
 }
 
 :root {
