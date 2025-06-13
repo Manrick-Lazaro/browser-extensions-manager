@@ -10,12 +10,12 @@ export default function Filter({
   onChangeFilter,
 }: FilterProps) {
   return (
-    <div className="grid grid-cols-1 ">
+    <div className="grid grid-cols-1 md:flex md:flex-row md:justify-between md:items-center">
       <h1 className="flex justify-center text-neutral-900 dark:text-neutral-100 font-[700] text-3xl">
         Extensions List
       </h1>
 
-      <div className="flex flex-row justify-center items-center gap-4 mt-4">
+      <div className="flex flex-row justify-center items-center gap-4 mt-4 md:mt-0">
         <ButtonComponent
           activatedFilter={activatedFilter}
           onChangeFilter={onChangeFilter}

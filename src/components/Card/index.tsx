@@ -36,7 +36,7 @@ export default function Card({
   }
 
   return (
-    <div className="bg-neutral-0 dark:bg-neutral-800 border-[0.5px] border-neutral-300 dark:border-neutral-600 rounded-2xl shadow-md p-4 flex flex-col gap-y-6">
+    <div className="bg-neutral-0 dark:bg-neutral-800 border-[0.5px] border-neutral-300 dark:border-neutral-600 rounded-2xl shadow-md p-4 flex flex-col gap-y-6 max-w-[380px]">
       <div className="flex flex-row items-start gap-4 h-25 overflow-auto">
         <Image src={logo} alt="logo exetion" width={55} height={0} />
 
