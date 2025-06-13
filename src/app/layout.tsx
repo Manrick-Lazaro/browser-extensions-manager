@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 import { cookies } from "next/headers";
+import Header from "@/components/Header";
 
 export const metadata: Metadata = {
   title: "Extensions",
@@ -22,7 +23,13 @@ export default async function RootLayout({
 
   return (
     <html lang="en" className={`${initialPrefs.state.theme}`}>
-      <body className="antialiased font-display">{children}</body>
+      <body className="flex justify-center font-display bg-linear-to-b from-light-gradient-from to-light-gradient-to dark:from-dark-gradient-from dark:to-dark-gradient-to min-h-lvh">
+        <div className="max-w-7xl px-5 pt-4">
+          <Header />
+
+          {children}
+        </div>
+      </body>
     </html>
   );
 }
