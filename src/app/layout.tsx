@@ -17,12 +17,12 @@ export default async function RootLayout({
   const cookieStore = await cookies();
   const prefCookie = cookieStore.get("data_theme")?.value;
 
-  const initialPrefs = prefCookie
-    ? JSON.parse(prefCookie)
-    : { theme: "light", locale: "pt-BR" };
+  const theme = prefCookie
+    ? JSON.parse(prefCookie).state.data_theme?.value
+    : "light";
 
   return (
-    <html lang="en" className={`${initialPrefs.state.theme}`}>
+    <html lang="en" className={`${theme}`}>
       <body className="flex justify-center font-display bg-linear-to-b from-light-gradient-from to-light-gradient-to dark:from-dark-gradient-from dark:to-dark-gradient-to min-h-lvh min-w-[300px] ">
         <div className="max-w-7xl w-full px-5 pt-4">
           <Header />
