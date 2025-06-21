@@ -12,6 +12,8 @@ export const useThemeStore = create<themeStore>()(
     (set, get) => ({
       theme: "light",
       switchTheme: () => {
+        if (typeof window === "undefined") return;
+
         const root = window.document.documentElement;
 
         let oldTheme = "";
